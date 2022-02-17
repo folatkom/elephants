@@ -8,7 +8,6 @@ let cyclesArray = [];
 let simpleArray =[];
 let pickedNum;
 let isFinished = false;
-
 //parameters
 let massArray = [];
 let minCycleWeight;
@@ -21,55 +20,9 @@ let method2;
 let result = 0;
 
 //convert to arrays
-let char = "";
-for (let i = 0; i < orderIn.length; i++) {
-    if (i === orderIn.length-1){
-        char += orderIn.charAt(i);
-        inArray.push(char);
-        char = "";
-    }
-    else {
-        if (orderIn.charAt(i) !== " ") {
-            char += orderIn.charAt(i);
-        }
-        else if (orderIn.charAt(i) === " "){
-            inArray.push(char);
-            char = "";
-        }        
-    }  
-};
-for (let i = 0; i < orderOut.length; i++) {
-    if (i === orderOut.length-1){
-        char += orderOut.charAt(i);
-        outArray.push(char);
-        char = "";
-    }
-    else {
-        if (orderOut.charAt(i) !== " ") {
-            char += orderOut.charAt(i);
-        }
-        else if (orderOut.charAt(i) === " "){
-            outArray.push(char);
-            char = "";
-        }        
-    }  
-};
-for (let i = 0; i < mass.length; i++) {
-    if (i === mass.length-1){
-        char += mass.charAt(i);
-        massArray.push(char);
-        char = "";
-    }
-    else {
-        if (mass.charAt(i) !== " ") {
-            char += mass.charAt(i);
-        }
-        else if (mass.charAt(i) === " "){
-            massArray.push(char);
-            char = "";
-        }        
-    }  
-};
+inArray = orderIn.split(" ");
+outArray = orderOut.split(" ");
+massArray = mass.split(" ");
 
 //divide into cycles
 let index = 0;
